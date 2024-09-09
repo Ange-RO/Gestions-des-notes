@@ -1,0 +1,68 @@
+/* Styles pour le conteneur des notes */
+.notes-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Styles pour le tableau */
+  .notes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notes-table thead {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .notes-table th, .notes-table td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .notes-table th {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .notes-table td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notes-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .actions {
+    text-align: right;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 4px;
+  }
+  
+  .btn-delete {
+    background-color: #e57373;
+    color: #fff;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c62828;
+  }
+  
+  .btn-edit {
+    background-color: #64b5f6;
+    color: #fff;
+  }
+  
+  .btn-edit:hover {
+    background-color: #1e88e5;
+  }
+  

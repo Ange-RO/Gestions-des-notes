@@ -1,0 +1,12 @@
+<div>
+  <h2>Create une nouvelle Note</h2>
+  <form (ngSubmit)="createNote()">
+    <label for="title">Titre:</label>
+    <input id="title" [(ngModel)]="note.title" name="title" required />
+
+    <label for="content">Contenu:</label>
+    <textarea id="content" [(ngModel)]="note.content" name="content" required></textarea>
+
+    <button type="submit">Creer</button>
+  </form>
+</div>

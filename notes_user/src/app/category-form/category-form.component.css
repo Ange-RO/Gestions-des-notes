@@ -1,0 +1,51 @@
+/* category-form.component.css */
+
+/* Style du formulaire */
+.category-form {
+    max-width: 500px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centrage horizontal */
+    padding: 20px; /* Espacement intérieur */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #f9f9f9; /* Couleur de fond */
+  }
+  
+  /* Style des groupes de champs */
+  .form-group {
+    margin-bottom: 15px; /* Espacement entre les groupes de champs */
+  }
+  
+  /* Style des labels */
+  .form-group label {
+    display: block; /* Affichage en bloc */
+    margin-bottom: 5px; /* Espacement sous le label */
+    font-weight: bold; /* Texte en gras */
+    color: #333; /* Couleur du texte */
+  }
+  
+  /* Style des champs de saisie */
+  .form-group input {
+    width: 100%; /* Largeur complète */
+    padding: 8px; /* Espacement intérieur */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+  }
+  
+  /* Style du bouton de soumission */
+  .submit-button {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement intérieur */
+    font-size: 16px; /* Taille de la police */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s ease; /* Transition de la couleur de fond */
+  }
+  
+  /* Style du bouton au survol */
+  .submit-button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+  

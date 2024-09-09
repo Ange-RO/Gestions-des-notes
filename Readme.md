@@ -35,4 +35,4 @@ Relations
 # Relation One-to-Many : Un utilisateur (User) peut avoir plusieurs notes (Note). Cela est représenté par la relation @OneToMany dans la classe User et @ManyToOne dans la classe Note.
 # Clé Étrangère : La table Note contient une colonne user_id qui est une clé étrangère vers la table User.
 
-
+## En ajoutant la classe ``WebMvcConfig``, vous permettez à votre application Spring Boot de répondre aux requêtes provenant de votre application Angular en développement. La configuration CORS garantit que les demandes HTTP de votre frontend Angular (hébergé sur http://localhost:4200) seront acceptées par votre backend Spring Boot, même si ces deux applications sont exécutées sur des ports différents pendant le développement.

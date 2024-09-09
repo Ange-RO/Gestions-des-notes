@@ -52,4 +52,10 @@ public class NoteController {
         noteService.deleteNote(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Note>> searchNotes(@RequestParam("q") String query) {
+        List<Note> notes = noteService.searchNotes(query);
+        return ResponseEntity.ok(notes);
+}
 }

@@ -29,14 +29,11 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "nom", nullable = false)
-    private String nom;
+    @Column(name = "title", nullable = false)
+    private String title;
 
-    @Column(name = "discipline", nullable = false)
-    private String discipline;
-
-    @Column(name = "note", nullable = false)
-    private Double note;
+    @Column(name = "content", nullable = false) 
+    private String content;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -46,8 +43,8 @@ public class Note {
 
     // relations
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
     @PrePersist // s'exécute avant de créer une donnée
     protected void onCreate() {

@@ -1,0 +1,12 @@
+<div *ngIf="note">
+  <h2>Modifier une Note</h2>
+  <form (ngSubmit)="updateNote()">
+    <label for="title">Titre:</label>
+    <input id="title" [(ngModel)]="note.title" name="title" required />
+
+    <label for="content">Contenu:</label>
+    <textarea id="content" [(ngModel)]="note.content" name="content" required></textarea>
+
+    <button type="submit">Modifier</button>
+  </form>
+</div>

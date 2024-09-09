@@ -2,14 +2,15 @@ package com.gestiondesnotes.notes_app.service;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gestiondesnotes.notes_app.model.Note;
-import com.gestiondesnotes.notes_app.model.User;
+import com.gestiondesnotes.notes_app.model.Category;
 import com.gestiondesnotes.notes_app.repository.NoteRepository;
-import com.gestiondesnotes.notes_app.repository.UserRepository;
+import com.gestiondesnotes.notes_app.repository.CategoryRepository;
 
 @Service
 public class NoteService {
@@ -17,7 +18,7 @@ public class NoteService {
     private NoteRepository noteRepository;
 
      @Autowired
-    private UserRepository userRepository;
+    private CategoryRepository categoryRepository;
 
     public List<Note> getAllNotes() {
         return noteRepository.findAll();
@@ -31,9 +32,9 @@ public class NoteService {
         return note;
     }
 
-    public Note createNote(Long userId, Note note) {
-        User user = userRepository.findById(userId)
-        .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+    public Note createNote(Long categoryId, Note note) {
+        Category category = categoryRepository.findById(categoryId)
+        .orElseThrow(() -> new RuntimeException("Category non trouvé"));
         
         Note newNote = noteRepository.save(note);
         return newNote;
@@ -44,14 +45,20 @@ public class NoteService {
                 .findById(id)
                 .orElseThrow(() -> new RuntimeException("Note non trouvée"));
 
-        updatedNote.setNom(note.getNom());
-        updatedNote.setDiscipline(note.getDiscipline());
-        updatedNote.setNote(note.getNote());
+        updatedNote.setTitle(note.getTitle());
+        updatedNote.setContent(note.getContent());
         noteRepository.save(updatedNote);
         return updatedNote;
     }
 
     public void deleteNote(Long id) {
         noteRepository.deleteById(id);
+    }
+
+   public List<Note> searchNotes(String query) {
+        return noteRepository.findAll().stream()
+            .filter(note -> note.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                            note.getContent().toLowerCase().contains(query.toLowerCase()))
+            .collect(Collectors.toList());
     }
 }

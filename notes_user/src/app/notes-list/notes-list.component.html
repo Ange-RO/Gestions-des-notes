@@ -1,0 +1,28 @@
+<div>
+  <!-- <input [(ngModel)]="searchQuery" placeholder="Search notes" />
+  <button (click)="searchNotes()">Rechercher</button>
+   -->
+  <div class="notes-container">
+    <table class="notes-table">
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Contenu</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of notes">
+          <td>{{ note.title }}</td>
+          <td>{{ note.content }}</td>
+          <td class="actions">
+            <button (click)="deleteNote(note.id)" class="btn btn-delete">Supprimer</button>
+            <a [routerLink]="['/notes', note.id]" class="btn btn-edit">Modifier</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+

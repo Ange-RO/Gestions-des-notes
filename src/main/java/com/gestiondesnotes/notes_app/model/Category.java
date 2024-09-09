@@ -14,21 +14,15 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "user")
-public class User {
+@Table(name = "category")
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String username;
-
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false, unique = true)
-    private String email;
+    private String name;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -37,7 +31,7 @@ public class User {
     private LocalDateTime updatedAt;
 
     //relation
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "category")
     private Set<Note> notes;
 
     @PrePersist
